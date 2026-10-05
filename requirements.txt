@@ -1,0 +1,27 @@
+# Core
+pandas>=2.2.0
+numpy>=1.26.0
+sqlalchemy>=2.0.0
+requests>=2.31.0
+
+# Market data
+yfinance>=0.2.36
+# nsepython>=2.9          # optional - better live NSE quotes when available
+growwapi>=0.1.0            # optional - only used if GROWW_TOTP_TOKEN/SECRET are set
+pyotp>=2.9.0                # optional - TOTP codes for the Groww adapter
+
+# Statistics
+scipy>=1.11.0
+statsmodels>=0.14.0
+
+# Dashboard
+streamlit>=1.36.0           # 1.36+ required for st.navigation / st.Page (multi-page dashboard)
+plotly>=5.18.0
+streamlit-autorefresh>=1.0.1
+fpdf2>=2.7.0                 # PDF downloads and the report generator
+
+# Config
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
