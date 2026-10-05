@@ -1,0 +1,44 @@
+# Live Data Platform Configuration
+
+app:
+  name: "Live Data Platform"
+  version: "0.1.0"
+  log_level: "INFO"
+
+ingestion:
+  tick_interval_sec: 1.0          # simulated tick cadence
+  symbols:
+    equity:
+      - RELIANCE
+      - TCS
+      - INFY
+      - HDFCBANK
+      - SBIN
+    fx:
+      - USDINR
+      - EURUSD
+      - GBPUSD
+    macro:
+      - NIFTY_VIX
+      - INDIA_10Y
+      - USD_INDEX
+
+database:
+  historical_url: "sqlite:///data/historical.db"
+  realtime_window_size: 500       # ticks kept in memory per symbol
+
+analytics:
+  technical:
+    sma_periods: [9, 21, 50]
+    ema_periods: [9, 21]
+    rsi_period: 14
+    macd: [12, 26, 9]
+    bbands_period: 20
+  regime:
+    vol_lookback: 20
+    risk_off_threshold: 1.5       # z-score of VIX / ATR
+
+dashboard:
+  refresh_interval_sec: 2
+  default_symbol: "RELIANCE"
+  chart_height: 450
